@@ -27,6 +27,15 @@ function resetCaptcha(){
   var src = "<{url c='api/captcha' a='image' v='"+rand'}>;
   $('#captcha-img').attr('src', src);	
 }
+
+// 回车登录
+$(function() {
+	$(document).keyup(function(e) {
+		if (e.keyCode == 13) {
+			$('.btn.unslt').click();
+		}
+	});
+});
 </script>
 </head>
 <body>
@@ -44,7 +53,7 @@ function resetCaptcha(){
       <h2 class="c666">系统管理登陆</h2>
       <dl class="username mt20">
         <dt><i class="icon"></i></dt>
-        <dd><input name="username" id="username" type="text" placeholder="请输入登录名" /></dd>
+        <dd><input name="username" id="username" type="text" placeholder="请输入登录名" autofocus /></dd>
       </dl>
       <dl class="pwd mt20">
         <dt><i class="icon"></i></dt>
